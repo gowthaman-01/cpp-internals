@@ -31,8 +31,3 @@ This repository is a collection of Data Structures and Algorithms implemented in
 ### Dynamic Programming
 - 0/1 Knapsack
 - Unbounded Knapsack
-
-## About
-
-- All implementations are **from scratch**, without using STL containers like `vector`, `map`, or `set` (unless noted otherwise).
-- Emphasis on **code readability**, **modular **, and **performance**.
