@@ -1,8 +1,10 @@
 #include <vector>
 
-// Best Case (nearly sorted input) : O(n)
-// Average Case                    : O(n^2)
-// Worst Case                      : O(n^2)
+/*
+ * Best Case (nearly sorted input) : O(n)
+ * Average Case                    : O(n^2)
+ * Worst Case                      : O(n^2)
+*/
 void insertion_sort(std::vector<int>& arr) {
     for (int i = 0; i < arr.size(); i++) {
         int cur = arr[i];
