@@ -1,4 +1,8 @@
+#pragma once
+
 #include <vector>
+
+namespace gstd::sort {
 
 /*
  * Best Case (nearly sorted input) : O(n)
@@ -19,3 +23,4 @@ void insertion_sort(std::vector<int>& arr) {
     }
 }
  
+} // namespace gstd::sort

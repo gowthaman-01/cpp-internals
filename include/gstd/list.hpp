@@ -1,27 +1,30 @@
+#pragma once
+
 #include <memory>
 
-class Node {
-public:
-    int val;
-    std::unique_ptr<Node> next;
-    Node* prev;
+namespace gstd {
 
-    explicit Node(int val) : val(val), prev(nullptr), next(nullptr) {}
-};
-
-class Deque {
+class list {
 private:
-    std::unique_ptr<Node> head;
-    Node* tail;
+    struct node {
+        int val;
+        std::unique_ptr<node> next;
+        node* prev;
+
+        explicit node(int val) : val(val), prev(nullptr), next(nullptr) {}
+    };
+
+    std::unique_ptr<node> head;
+    node* tail;
 public:
-    Deque() : head(nullptr), tail(nullptr) {}
+    list() : head(nullptr), tail(nullptr) {}
     
     bool isEmpty() const {
         return !head;
     }
 
     void append(int value) {
-        auto new_node = std::make_unique<Node>(value);
+        auto new_node = std::make_unique<node>(value);
         if (!head) {
             head = std::move(new_node);
             tail = head.get();
@@ -34,7 +37,7 @@ public:
     }
 
     void appendleft(int value) {
-        auto new_node = std::make_unique<Node>(value);
+        auto new_node = std::make_unique<node>(value);
         if (!head) {
             head = std::move(new_node);
             tail = head.get();
@@ -80,3 +83,5 @@ public:
         return val;
     }
 };
+
+} // namespace gstd

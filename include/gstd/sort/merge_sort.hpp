@@ -1,5 +1,8 @@
+#pragma once
+
 #include <vector>
-#include "sorting.h"
+
+namespace gstd::sort {
 
 void merge_sort(std::vector<int>& arr) {
     merge_sort(arr, 0, static_cast<int>(arr.size() - 1));
@@ -41,3 +44,5 @@ void merge(std::vector<int>& arr, int start, int mid, int end) {
         arr[merge_index++] = right[right_index++];
     }
 }
+
+} // namespace gstd::sort

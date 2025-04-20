@@ -1,7 +1,10 @@
+#pragma once
+
 #include <algorithm>
 #include <cstdlib>
 #include <vector>
-#include "sorting.h"
+
+namespace gstd::sort {
 
 /*
  * Best Case / Average Case (pivot splits evenly)
@@ -42,3 +45,4 @@ void quick_sort(std::vector<int>& arr, int start, int end) {
     quick_sort(arr, partition_index + 1, end);
 }
 
+} // namespace gstd::sort

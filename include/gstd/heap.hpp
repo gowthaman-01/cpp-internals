@@ -1,5 +1,9 @@
+#pragma once
+
 #include <algorithm>
 #include <vector>
+
+namespace gstd {
 
 class MinHeap {
 private:
@@ -20,11 +24,11 @@ private:
     bool check_bounds(int node) {
         return node >= 0 && node < get_size();
     }
-
+    
     void heapify_up(int child) {
         while (child > 0) {
             int parent = get_parent(child);
-
+            
             if (heap[parent] <= heap[child]) {
                 return;
             }
@@ -48,8 +52,8 @@ private:
             // If left and right child present, choose the child with the lesser value.
             if (right_child < get_size()) {
                 child = heap[left_child] <= heap[right_child]
-                                    ? left_child
-                                    : right_child;
+                ? left_child
+                : right_child;
             }
             
             if (heap[parent] <= heap[child]) {
@@ -106,3 +110,5 @@ public:
         return min_val;
     }
 };
+
+} // namespace gstd

@@ -1,27 +1,31 @@
+#pragma once
+
 #include <algorithm>
 #include <memory>
 
-class DynamicArray {
+namespace gstd {
+
+class vector {
 private:
     std::unique_ptr<int[]> arr = nullptr;
     int capacity = 0;
     int length = 0;
 
 public:
-    DynamicArray(int capacity) : arr(new int[capacity]), capacity(capacity), length(0) {}
+    vector(int capacity) : arr(new int[capacity]), capacity(capacity), length(0) {}
 
-    DynamicArray(const DynamicArray&) = delete;
-    DynamicArray& operator=(const DynamicArray&) = delete;
+    vector(const vector&) = delete;
+    vector& operator=(const vector&) = delete;
 
     int get(int i) const {
-        if (i < 0 || i >= length) 
+        if (i < 0 || i >= length)
             throw std::out_of_range("Index out of range");
 
         return arr[i];
     }
 
     void set(int i, int n) {
-        if (i < 0 || i >= length) 
+        if (i < 0 || i >= length)
             throw std::out_of_range("Index out of range");
 
         arr[i] = n;
@@ -36,7 +40,7 @@ public:
     }
 
     int pop_back() {
-        if (length == 0) 
+        if (length == 0)
             throw std::underflow_error("Array is empty");
 
         return arr[--length];
@@ -58,3 +62,6 @@ private:
         arr = std::move(new_arr);
     }
 };
+
+} // namespace gstd
+
