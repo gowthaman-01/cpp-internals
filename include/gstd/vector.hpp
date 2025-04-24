@@ -5,6 +5,13 @@
 
 namespace gstd {
 
+/**
+ * @brief TODO: Replace raw new/delete with allocator pattern.
+ *
+ * Use alloc.allocate(), construct_at(), destroy_at(), deallocate().
+ * This allows separating memory allocation from object construction,
+ * needed for proper capacity management (push_back, grow, etc.).
+ */
 class vector {
 private:
     std::unique_ptr<int[]> arr = nullptr;
