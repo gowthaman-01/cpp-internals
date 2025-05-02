@@ -1,5 +1,3 @@
-#pragma once
-
 #include "tree_node.hpp"
 
 #include <stack>
